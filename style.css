@@ -1,0 +1,163 @@
+/*How can Claude be so bad at coding and doing whatever it wants ?! */
+
+{
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 40px 20px;
+	background: #fafafa;
+	font-family: Georgia, 'Times New Roman', serif;
+	color: #1a1a1a;
+	display: flex;
+	justify-content: center;
+}
+/* The whole sheet is one column; each "section" below stacks
+ inside it. This outer wrapper is what centers and constrains
+ the page width. */
+.sheet {
+	width: 100%;
+	max-width: 900px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px; /* <-- this single property is doing most of your"separate the sections" job: it puts consistent
+	breathing room between every direct child,
+    instead of you hand-tuning margins on each one */
+}
+
+/*To  modify, I don't want my images and stuff in a header that's not their place
+.head{
+	display: flex;
+	gap: 24px;
+	align-items: flex-start;
+	flex-wrap: wrap; /* so it reflows on narrow screens instead of squashing */
+}
+.portrait {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	border: 6px double #1a1a1a;
+	object-fit: cover;
+	flex-shrink: 0;
+	background: #cfd8dc;
+}
+
+/*.head-right {
+	flex: 1;
+	min-width: 260px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+} */
+
+.name-plate {
+	border: 2px solid #1a1a1a;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+.name-plate h1 {
+	margin: 0;
+	font-size: 2rem;
+	letter-spacing: 1px;
+}
+
+/* Class / Domain / Level row */
+.meta-row {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.meta-badge {
+	background: #cfd8dc;
+	border-radius: 999px;
+	padding: 8px 18px;
+	text-align: center;
+	font-size: 0.85rem;
+}
+
+.meta-badge strong {
+	display: block;
+	font-size: 0.95rem;
+}
+
+/* Stats row (STR/DEX/CON/INT/WIS/CHA) */
+.stats-row {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.stat {
+	background: #cfd8dc;
+	/* a simple hexagon using clip-path, since that's the shape
+   in your reference image */
+	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	width: 64px;
+	height: 64px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75rem;
+}
+
+.stat strong {
+	font-size: 0.85rem;
+}
+
+/* ---------- Skills area ---------- */
+
+.skills-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto;
+	gap: 20px;
+}
+
+.panel {
+	background: #cfd8dc;
+	border-radius: 16px;
+	padding: 20px;
+}
+
+.panel h2 {
+	margin: 0 0 10px;
+	font-size: 1.1rem;
+	text-decoration: underline;
+}
+
+.panel ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.hard-skills {
+	grid-row: span 2; /* makes it tall, matching the reference */
+}
+
+/* Collapse to a single column on narrow screens */
+@media (max-width: 600px) {
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+	.hard-skills {
+		grid-row: auto;
+	}
+}
+
+/* ---------- Footer ---------- */
+
+/*To Keep*/
+footer {
+	border-top: 1px solid #1a1a1a;
+	padding-top: 12px;
+	text-align: center;
+	font-size: 0.85rem;
+}
+
+footer a {
+	color: #1a1a1a;
+}
